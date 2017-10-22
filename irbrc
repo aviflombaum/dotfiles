@@ -6,7 +6,15 @@ alias q exit
 
 class Object
   def local_methods
-    (methods - Object.instance_methods).sort
+    (self.methods - Object.instance_methods).sort
+  end
+
+  def try(*a, &b)
+    if a.empty? && block_given?
+      yield self
+    else
+      __send__(*a, &b)
+    end
   end
 end
 
@@ -25,14 +33,14 @@ ANSI[:CYAN]      = "\e[36m"
 ANSI[:WHITE]     = "\e[37m"
 
 # Build a simple colorful IRB prompt
-IRB.conf[:PROMPT][:SIMPLE_COLOR] = {
-  :PROMPT_I => "#{ANSI[:LGRAY]}%03n#{ANSI[:CYAN]}:#{ANSI[:LGRAY]}%i#{ANSI[:BLUE]} >#{ANSI[:RESET]} ",
-  :PROMPT_N => "#{ANSI[:LGRAY]}%03n#{ANSI[:CYAN]}:#{ANSI[:LGRAY]}%i%l#{ANSI[:BLUE]} >#{ANSI[:RESET]} ",
-  :PROMPT_C => "#{ANSI[:RED]}?>#{ANSI[:RESET]} ",
-  :PROMPT_S => "#{ANSI[:YELLOW]}?>#{ANSI[:RESET]} ",
-  :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n",
-  :AUTO_INDENT => true }
-IRB.conf[:PROMPT_MODE] = :SIMPLE_COLOR
+# IRB.conf[:PROMPT][:SIMPLE_COLOR] = {
+#   :PROMPT_I => "#{ANSI[:LGRAY]}%03n#{ANSI[:CYAN]}:#{ANSI[:LGRAY]}%i#{ANSI[:BLUE]} >#{ANSI[:RESET]} ",
+#   :PROMPT_N => "#{ANSI[:LGRAY]}%03n#{ANSI[:CYAN]}:#{ANSI[:LGRAY]}%i%l#{ANSI[:BLUE]} >#{ANSI[:RESET]} ",
+#   :PROMPT_C => "#{ANSI[:RED]}?>#{ANSI[:RESET]} ",
+#   :PROMPT_S => "#{ANSI[:YELLOW]}?>#{ANSI[:RESET]} ",
+#   :RETURN   => "#{ANSI[:GREEN]}=>#{ANSI[:RESET]} %s\n",
+#   :AUTO_INDENT => true }
+# IRB.conf[:PROMPT_MODE] = :SIMPLE_COLOR
 
 # IRB.conf[:PROMPT_MODE][:DEFAULT] = {
 #       :PROMPT_I => "%N(%m):%03n:%i> ",
@@ -71,9 +79,9 @@ end
 # end
 
 # awesome_print is prints prettier than pretty_print
-extend_console 'ap' do
-  alias pp ap
-end
+# extend_console 'ap' do
+#   alias pp ap
+# end
 
 # When you're using Rails 2 console, show queries in the console
 # extend_console 'rails2', (ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')), false do
@@ -82,18 +90,18 @@ end
 # end
 
 # When you're using Rails 3 console, show queries in the console
-extend_console 'rails3', defined?(ActiveSupport::Notifications), false do
-  $odd_or_even_queries = false
-  ActiveSupport::Notifications.subscribe('sql.active_record') do |*args|
-    $odd_or_even_queries = !$odd_or_even_queries
-    color = $odd_or_even_queries ? ANSI[:CYAN] : ANSI[:MAGENTA]
-    event = ActiveSupport::Notifications::Event.new(*args)
-    time  = "%.1fms" % event.duration
-    name  = event.payload[:name]
-    sql   = event.payload[:sql].gsub("\n", " ").squeeze(" ")
-    puts "  #{ANSI[:UNDERLINE]}#{color}#{name} (#{time})#{ANSI[:RESET]}  #{sql}"
-  end
-end
+# extend_console 'rails3', defined?(ActiveSupport::Notifications), false do
+#   $odd_or_even_queries = false
+#   ActiveSupport::Notifications.subscribe('sql.active_record') do |*args|
+#     $odd_or_even_queries = !$odd_or_even_queries
+#     color = $odd_or_even_queries ? ANSI[:CYAN] : ANSI[:MAGENTA]
+#     event = ActiveSupport::Notifications::Event.new(*args)
+#     time  = "%.1fms" % event.duration
+#     name  = event.payload[:name]
+#     sql   = event.payload[:sql].gsub("\n", " ").squeeze(" ")
+#     puts "  #{ANSI[:UNDERLINE]}#{color}#{name} (#{time})#{ANSI[:RESET]}  #{sql}"
+#   end
+# end
 
 # Add a method pm that shows every method on an object
 # Pass a regex to filter these
@@ -120,7 +128,7 @@ extend_console 'pm', true, false do
     end
     max_name = data.collect {|item| item[0].size}.max
     max_args = data.collect {|item| item[1].size}.max
-    data.each do |item| 
+    data.each do |item|
       print " #{ANSI[:CYAN]}#{item[0].to_s.rjust(max_name)}#{ANSI[:RESET]}"
       print "#{ANSI[:BLUE]}#{item[1].ljust(max_args)}#{ANSI[:RESET]}"
       print "   #{ANSI[:LGRAY]}#{item[2]}#{ANSI[:RESET]}\n"
