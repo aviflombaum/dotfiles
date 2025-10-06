@@ -1,0 +1,171 @@
+# See dotfiles/config/prompt_preview.md
+# Requires nerdfont
+
+right_format = "$time"
+command_timeout = 20000
+
+[character]
+error_symbol = '[](bold #ff5555) '
+success_symbol = '[]( #50fa7b) '
+
+[aws]
+symbol = "  "
+style = "bold #ffb86c"
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[cmd_duration]
+style = "bold #f1fa8c"
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+home_symbol = ""
+
+[docker_context]
+symbol = " "
+disabled = true
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+disabled = true
+
+[git_status]
+style = "bold #ff5555"
+
+[git_branch]
+symbol = " "
+style = "bold #ff79c6"
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = "⌘ "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+style = "bold #bd93f9"
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
+
+[package]
+symbol = " "
+
+[pijul_channel]
+symbol = "🪺 "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold #8be9fd"
+
+[line_break]
+disabled = false
+
+[time]
+disabled = false
+style = "bold bright-black"
+format = "[$time]($style)"

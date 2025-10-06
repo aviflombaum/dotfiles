@@ -1,0 +1,288 @@
+# ═══════════════════════════════════════════════════════════════
+# Environment Variables Template
+# ═══════════════════════════════════════════════════════════════
+#
+# Copy this file to ~/.config/env/.vars and customize with your values
+# DO NOT commit the actual .vars file to version control!
+
+# All these should actually use your password manager CLI API (like 1Password Below) as storing keys in plain text is never a good idea.
+# ═══════════════════════════════════════════════════════════════
+# SYSTEM PATHS
+# ═══════════════════════════════════════════════════════════════
+
+# Homebrew (M1/M2 Macs)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# Homebrew (Intel Macs)
+# eval "$(/usr/local/bin/brew shellenv)"
+
+# Android Development
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+# Python (pyenv)
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+# PostgreSQL (Postgres.app)
+export PSQL_PATH="/Applications/Postgres.app/Contents/Versions/latest/bin"
+export PATH="$PATH:$PSQL_PATH"
+
+# MySQL
+# export MYSQL_PATH="/usr/local/mysql/bin"
+# export PATH="$PATH:$MYSQL_PATH"
+
+# Yarn global packages
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Mix (Elixir)
+export PATH="$PATH:$HOME/.mix/escripts"
+
+# Oh My Zsh installation
+export ZSH="$HOME/.oh-my-zsh"
+
+# ═══════════════════════════════════════════════════════════════
+# DEVELOPMENT TOOLS
+# ═══════════════════════════════════════════════════════════════
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=true
+export NVM_AUTO_USE=true
+
+# Rust debugging
+export RUST_BACKTRACE=1
+
+# GPG
+export GPG_TTY=$(tty)
+
+# ═══════════════════════════════════════════════════════════════
+# API KEYS & TOKENS
+# ═══════════════════════════════════════════════════════════════
+#
+# SECURITY WARNING: Never commit real API keys!
+# Consider using a password manager or secret management tool
+
+# OpenAI - Get from: https://platform.openai.com/api-keys
+# export OPENAI_API_KEY="sk-..."
+
+# GitHub - Get from: https://github.com/settings/tokens
+# export GITHUB_TOKEN="ghp_..."
+
+# GitLab - Get from: https://gitlab.com/-/profile/personal_access_tokens
+# export GITLAB_TOKEN="glpat-..."
+
+# ═══════════════════════════════════════════════════════════════
+# CLOUD PROVIDERS
+# ═══════════════════════════════════════════════════════════════
+
+# AWS - Get from: https://console.aws.amazon.com/iam/
+# export AWS_ACCESS_KEY_ID="AKIA..."
+# export AWS_SECRET_ACCESS_KEY="..."
+# export AWS_DEFAULT_REGION="us-east-1"
+
+# Google Cloud Platform - Get from: https://console.cloud.google.com/apis/credentials
+# export GOOGLE_APPLICATION_CREDENTIALS="path/to/service-account.json"
+# export GCP_PROJECT_ID="your-project-id"
+
+# Azure - Get from: https://portal.azure.com/
+# export AZURE_CLIENT_ID="..."
+# export AZURE_CLIENT_SECRET="..."
+# export AZURE_TENANT_ID="..."
+
+# Digital Ocean - Get from: https://cloud.digitalocean.com/account/api/tokens
+# export DIGITALOCEAN_TOKEN="dop_v1_..."
+
+# ═══════════════════════════════════════════════════════════════
+# DATABASE CONNECTIONS
+# ═══════════════════════════════════════════════════════════════
+
+# PostgreSQL
+# export DATABASE_URL="postgresql://username:password@localhost:5432/dbname"
+# export POSTGRES_USER="username"
+# export POSTGRES_PASSWORD="password"
+# export POSTGRES_DB="dbname"
+# export POSTGRES_HOST="localhost"
+# export POSTGRES_PORT="5432"
+
+# MySQL
+# export MYSQL_USER="username"
+# export MYSQL_PASSWORD="password"
+# export MYSQL_DATABASE="dbname"
+# export MYSQL_HOST="localhost"
+# export MYSQL_PORT="3306"
+
+# MongoDB
+# export MONGODB_URI="mongodb://username:password@localhost:27017/dbname"
+
+# Redis
+# export REDIS_URL="redis://localhost:6379"
+
+# ═══════════════════════════════════════════════════════════════
+# PAYMENT PROCESSORS
+# ═══════════════════════════════════════════════════════════════
+
+# Stripe - Get from: https://dashboard.stripe.com/apikeys
+# export STRIPE_SECRET_KEY="sk_test_..."
+# export STRIPE_PUBLISHABLE_KEY="pk_test_..."
+# export STRIPE_WEBHOOK_SECRET="whsec_..."
+
+# PayPal - Get from: https://developer.paypal.com/
+# export PAYPAL_CLIENT_ID="..."
+# export PAYPAL_CLIENT_SECRET="..."
+
+# ═══════════════════════════════════════════════════════════════
+# COMMUNICATION SERVICES
+# ═══════════════════════════════════════════════════════════════
+
+# SendGrid (Email) - Get from: https://app.sendgrid.com/settings/api_keys
+# export SENDGRID_API_KEY="SG...."
+
+# Twilio (SMS/Voice) - Get from: https://console.twilio.com/
+# export TWILIO_ACCOUNT_SID="AC..."
+# export TWILIO_AUTH_TOKEN="..."
+# export TWILIO_PHONE_NUMBER="+1234567890"
+
+# Slack - Get from: https://api.slack.com/apps
+# export SLACK_BOT_TOKEN="xoxb-..."
+# export SLACK_APP_TOKEN="xapp-..."
+# export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+
+# Discord - Get from: https://discord.com/developers/applications
+# export DISCORD_BOT_TOKEN="..."
+# export DISCORD_CLIENT_ID="..."
+# export DISCORD_CLIENT_SECRET="..."
+
+# ═══════════════════════════════════════════════════════════════
+# ANALYTICS & MONITORING
+# ═══════════════════════════════════════════════════════════════
+
+# Google Analytics - Get from: https://analytics.google.com/
+# export GA_TRACKING_ID="UA-..."
+# export GA4_MEASUREMENT_ID="G-..."
+
+# Sentry (Error Tracking) - Get from: https://sentry.io/settings/
+# export SENTRY_DSN="https://...@sentry.io/..."
+
+# DataDog - Get from: https://app.datadoghq.com/organization-settings/api-keys
+# export DATADOG_API_KEY="..."
+# export DATADOG_APP_KEY="..."
+
+# ═══════════════════════════════════════════════════════════════
+# AUTHENTICATION & SECURITY
+# ═══════════════════════════════════════════════════════════════
+
+# JWT Secret (generate with: openssl rand -base64 32)
+# export JWT_SECRET="your-super-secret-jwt-key"
+
+# Session Secret (generate with: openssl rand -hex 32)
+# export SESSION_SECRET="your-session-secret"
+
+# Encryption Key
+# export ENCRYPTION_KEY="your-encryption-key"
+
+# OAuth Providers
+# Google
+# export GOOGLE_CLIENT_ID="..."
+# export GOOGLE_CLIENT_SECRET="..."
+
+# Facebook
+# export FACEBOOK_APP_ID="..."
+# export FACEBOOK_APP_SECRET="..."
+
+# Twitter
+# export TWITTER_API_KEY="..."
+# export TWITTER_API_SECRET="..."
+
+# ═══════════════════════════════════════════════════════════════
+# EDITOR PREFERENCES
+# ═══════════════════════════════════════════════════════════════
+
+# Set default editor based on SSH connection
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  # Choose your preferred editor:
+  # export EDITOR="code -w"      # VS Code
+  # export EDITOR="subl -w"      # Sublime Text
+  # export EDITOR="zed -w"       # Zed
+  # export EDITOR="nvim"         # Neovim
+  export EDITOR="vim"           # Vim (default)
+fi
+
+# React DevTools
+# export REACT_EDITOR='code'
+
+# ═══════════════════════════════════════════════════════════════
+# APPLICATION SETTINGS
+# ═══════════════════════════════════════════════════════════════
+
+# Application Environment
+# export NODE_ENV="development"  # development, staging, production
+# export RAILS_ENV="development"
+# export APP_ENV="development"
+
+# Application URLs
+# export APP_URL="http://localhost:3000"
+# export API_URL="http://localhost:3001"
+# export FRONTEND_URL="http://localhost:3000"
+# export BACKEND_URL="http://localhost:5000"
+
+# Feature Flags
+# export ENABLE_DEBUG="true"
+# export ENABLE_ANALYTICS="false"
+# export ENABLE_CACHE="true"
+
+# Rate Limiting
+# export RATE_LIMIT_MAX="100"
+# export RATE_LIMIT_WINDOW="15m"
+
+# 1Password CLI Biometric Unlock (macOS)
+# export OP_BIOMETRIC_UNLOCK_ENABLED=true
+
+# Chrome/Chromium executable for testing
+# export CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+# export CHROME_BIN="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+
+# Docker Registry
+# export DOCKER_REGISTRY_URL="docker.io"
+# export DOCKER_USERNAME="username"
+# export DOCKER_PASSWORD="password"
+
+# npm Registry Token
+# export NPM_TOKEN="..."
+
+# Homebrew GitHub Token (for higher rate limits)
+# export HOMEBREW_GITHUB_API_TOKEN="..."
+
+# ═══════════════════════════════════════════════════════════════
+# EXTERNAL SERVICES
+# ═══════════════════════════════════════════════════════════════
+
+# Weather API - Get from: https://openweathermap.org/api
+# export OPENWEATHER_API_KEY="..."
+
+# Google Maps API - Get from: https://developers.google.com/maps
+# export GOOGLE_MAPS_API_KEY="..."
+
+# Image Processing (Cloudinary) - Get from: https://cloudinary.com/
+# export CLOUDINARY_URL="cloudinary://..."
+
+# ═══════════════════════════════════════════════════════════════
+# CUSTOM PATHS & SETTINGS
+# ═══════════════════════════════════════════════════════════════
+
+# Add your custom paths and settings here
+# export MY_CUSTOM_PATH="$HOME/my-custom-tools"
+# export PATH="$PATH:$MY_CUSTOM_PATH"
+
+# ═══════════════════════════════════════════════════════════════
+# Notes:
+# ═══════════════════════════════════════════════════════════════
+#
+# 1. This is a template file - copy it to ~/.config/env/.vars and add real values
+# 2. Never commit .vars files containing real credentials
+# 3. Use a password manager or secrets management service for production
+# 4. Rotate keys regularly and revoke unused ones
+# 5. Use different keys for development, staging, and production
+# 6. Consider using tools like direnv or 1Password CLI for auto-loading

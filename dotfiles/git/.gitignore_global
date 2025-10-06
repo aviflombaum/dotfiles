@@ -1,0 +1,297 @@
+# ═══════════════════════════════════════════════════════════════
+# Global .gitignore
+# ═══════════════════════════════════════════════════════════════
+#
+# This file contains patterns that should be ignored in ALL Git
+# repositories on this machine.
+
+# ═══════════════════════════════════════════════════════════════
+# Operating System Files
+# ═══════════════════════════════════════════════════════════════
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+*.icloud
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+.nfs*
+
+# ═══════════════════════════════════════════════════════════════
+# Editor Files & Directories
+# ═══════════════════════════════════════════════════════════════
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# JetBrains IDEs (IntelliJ, WebStorm, RubyMine, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Vim
+*.swp
+*.swo
+*.swn
+.*.swp
+.*.swo
+.*.swn
+*~
+tags
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+.org-id-locations
+*_archive
+*_flymake.*
+/eshell/history
+/eshell/lastdir
+/elpa/
+*.rel
+/auto/
+.cask/
+
+# TextMate
+*.tmproj
+*.tmproject
+
+# Zed
+.zed/
+
+# Cursor
+.cursor/
+
+# ═══════════════════════════════════════════════════════════════
+# Language & Framework Specific
+# ═══════════════════════════════════════════════════════════════
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.node_repl_history
+*.tsbuildinfo
+.pnpm-debug.log*
+
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+.rspec_status
+.byebug_history
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.pytest_cache/
+.ruff_cache/
+
+# Elixir
+/_build
+/cover
+/deps
+/doc
+/.fetch
+erl_crash.dump
+*.ez
+*.beam
+/config/*.secret.exs
+.elixir_ls/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# Rust
+target/
+Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# ═══════════════════════════════════════════════════════════════
+# Environment & Configuration
+# ═══════════════════════════════════════════════════════════════
+
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# AWS
+.aws/
+
+# Docker
+.dockerignore
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# ═══════════════════════════════════════════════════════════════
+# Build Outputs & Logs
+# ═══════════════════════════════════════════════════════════════
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build directories
+build/
+dist/
+out/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.turbo/
+.vercel/
+.vuepress/dist/
+.temp/
+
+# ═══════════════════════════════════════════════════════════════
+# Testing
+# ═══════════════════════════════════════════════════════════════
+
+# Coverage reports
+coverage/
+*.lcov
+.nyc_output/
+
+# ═══════════════════════════════════════════════════════════════
+# Miscellaneous
+# ═══════════════════════════════════════════════════════════════
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+
+# Compressed files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Database
+*.sqlite
+*.sqlite3
+*.db
+
+# SSL certificates
+*.pem
+*.key
+*.crt
+*.cert
+
+# Secrets & credentials
+secrets/
+credentials/
+*.secret
+
+# Local notes
+TODO
+TODO.md
+NOTES
+NOTES.md
+.notes/
+
+# ═══════════════════════════════════════════════════════════════
+# Custom / Personal
+# ═══════════════════════════════════════════════════════════════
+
+# Add your personal global ignores below
+.local/
+.private/

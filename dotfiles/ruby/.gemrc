@@ -1,0 +1,29 @@
+# ═══════════════════════════════════════════════════════════════
+# RubyGems Configuration
+# ═══════════════════════════════════════════════════════════════
+
+# Don't install documentation by default (faster installs)
+gem: --no-document
+
+# You can also use these options:
+# gem: --no-ri --no-rdoc  # Older format
+# gem: --document=yri     # Only YARD documentation
+
+# Gem sources (default is rubygems.org)
+:sources:
+  - https://rubygems.org/
+
+# Verbose output
+# :verbose: true
+
+# Install gems to user directory instead of system
+# install: --user-install
+
+# Update sources
+# :update_sources: true
+
+# Backtrace on errors
+# :backtrace: true
+
+# Bulk threshold (number of gems to install before updating spec)
+# :bulk_threshold: 1000

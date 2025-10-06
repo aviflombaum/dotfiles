@@ -1,0 +1,60 @@
+# ═══════════════════════════════════════════════════════════════
+# ASDF Version Manager Configuration
+# ═══════════════════════════════════════════════════════════════
+#
+# This file specifies which versions of various tools to use
+# Copy to .tool-versions in your project root and customize
+#
+# Installation:
+# 1. Install asdf: brew install asdf
+# 2. Add plugins: asdf plugin add <language>
+# 3. Install versions: asdf install
+
+# Ruby
+ruby 3.3.0
+
+# Node.js
+nodejs 20.11.0
+
+# Python
+python 3.12.0
+
+# Elixir & Erlang
+# elixir 1.15.7
+# erlang 26.0
+
+# Go
+# golang 1.21.5
+
+# Rust
+# rust 1.75.0
+
+# Java
+# java openjdk-21
+
+# PHP
+# php 8.3.0
+
+# PostgreSQL
+# postgres 16.1
+
+# Redis
+# redis 7.2.3
+
+# Yarn
+# yarn 1.22.21
+
+# pnpm
+# pnpm 8.14.0
+
+# Terraform
+# terraform 1.6.6
+
+# AWS CLI
+# awscli 2.15.0
+
+# kubectl
+# kubectl 1.29.0
+
+# Other tools can be added as needed
+# Check available plugins: asdf plugin list all

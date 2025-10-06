@@ -1,0 +1,162 @@
+# ═══════════════════════════════════════════════════════════════
+# RuboCop Configuration
+# ═══════════════════════════════════════════════════════════════
+#
+# A sensible RuboCop configuration for modern Ruby development.
+# Focuses on readability and maintainability over strict adherence.
+
+AllCops:
+  NewCops: enable # Automatically enable new cops
+  TargetRubyVersion: 3.0
+  Exclude:
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+
+# ═══════════════════════════════════════════════════════════════
+# Style Cops
+# ═══════════════════════════════════════════════════════════════
+
+Style/FrozenStringLiteralComment:
+  Enabled: false # Not always necessary, adds noise
+
+Style/StringLiterals:
+  Enabled: false # Allow both single and double quotes
+
+Style/Documentation:
+  Enabled: false # Not every class needs documentation
+
+Style/SymbolArray:
+  Enabled: true
+  EnforcedStyle: brackets # Prefer [:a, :b] over %i[a b]
+
+Style/WordArray:
+  Enabled: false # Allow both ['a', 'b'] and %w[a b]
+
+Style/GuardClause:
+  Enabled: true # Encourage early returns
+
+Style/IfUnlessModifier:
+  Enabled: false # Sometimes multi-line is more readable
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19 # Use new hash syntax when possible
+
+# ═══════════════════════════════════════════════════════════════
+# Layout Cops
+# ═══════════════════════════════════════════════════════════════
+
+Layout/MultilineOperationIndentation:
+  Enabled: false # Allow flexible indentation for chained methods
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false # Allow [1, 2] or [ 1, 2 ]
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false # Allow {a: 1} or { a: 1 }
+
+Layout/LineLength:
+  Max: 120 # More reasonable than 80 for modern screens
+  Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+
+# ═══════════════════════════════════════════════════════════════
+# Metrics Cops
+# ═══════════════════════════════════════════════════════════════
+
+Metrics/MethodLength:
+  Max: 20 # Allow reasonable method length
+  Exclude:
+    - 'db/migrate/*'
+    - 'test/**/*'
+    - 'spec/**/*'
+
+Metrics/ClassLength:
+  Max: 200 # Allow reasonable class length
+
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+    - 'config/**/*'
+    - '*.gemspec'
+    - 'Rakefile'
+
+Metrics/AbcSize:
+  Max: 20 # Allow moderate complexity
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+# ═══════════════════════════════════════════════════════════════
+# Lint Cops
+# ═══════════════════════════════════════════════════════════════
+
+Lint/MissingSuper:
+  Enabled: true
+
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: true
+
+# ═══════════════════════════════════════════════════════════════
+# Rails Cops (if using Rails)
+# ═══════════════════════════════════════════════════════════════
+
+# Uncomment these if using Rails:
+# require: rubocop-rails
+
+# Rails/HasManyOrHasOneDependent:
+#   Enabled: true
+
+# Rails/Validation:
+#   Enabled: true
+
+# Rails/UnknownEnv:
+#   Environments:
+#     - production
+#     - development
+#     - test
+#     - staging
+
+# ═══════════════════════════════════════════════════════════════
+# Performance Cops (optional)
+# ═══════════════════════════════════════════════════════════════
+
+# Uncomment to enable performance cops:
+# require: rubocop-performance
+
+# Performance/RegexpMatch:
+#   Enabled: true
+
+# Performance/StringReplacement:
+#   Enabled: true
+
+# ═══════════════════════════════════════════════════════════════
+# RSpec Cops (if using RSpec)
+# ═══════════════════════════════════════════════════════════════
+
+# Uncomment these if using RSpec:
+# require: rubocop-rspec
+
+# RSpec/ExampleLength:
+#   Max: 20
+
+# RSpec/MultipleExpectations:
+#   Max: 5
+
+# RSpec/NestedGroups:
+#   Max: 5

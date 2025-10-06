@@ -1,0 +1,132 @@
+# ═══════════════════════════════════════════════════════════════
+# Dotfiles Repository .gitignore
+# ═══════════════════════════════════════════════════════════════
+#
+# This file tells Git which files to ignore in the dotfiles repo
+
+# ═══════════════════════════════════════════════════════════════
+# CRITICAL - Never commit these
+# ═══════════════════════════════════════════════════════════════
+
+# Environment files with secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Private configuration files
+config/env/.vars
+!config/env/.vars.example
+
+# Local customizations
+*.local
+*.private
+.zshrc.local
+.gitconfig.local
+zshfunctions.local.sh
+
+# ═══════════════════════════════════════════════════════════════
+# Operating System Files
+# ═══════════════════════════════════════════════════════════════
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ═══════════════════════════════════════════════════════════════
+# Editor Files
+# ═══════════════════════════════════════════════════════════════
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+\#*\#
+.\#*
+
+# ═══════════════════════════════════════════════════════════════
+# Backup Files
+# ═══════════════════════════════════════════════════════════════
+
+*.backup
+*.backup.*
+*.bak
+*.old
+*.orig
+*.tmp
+
+# ═══════════════════════════════════════════════════════════════
+# Logs and Temporary Files
+# ═══════════════════════════════════════════════════════════════
+
+*.log
+logs/
+tmp/
+temp/
+
+# ═══════════════════════════════════════════════════════════════
+# Dependencies and Build Files
+# ═══════════════════════════════════════════════════════════════
+
+node_modules/
+vendor/
+.bundle/
+
+# ═══════════════════════════════════════════════════════════════
+# Personal Notes and TODOs
+# ═══════════════════════════════════════════════════════════════
+
+TODO
+TODO.md
+NOTES
+NOTES.md
+.notes/
+personal/
+
+# ═══════════════════════════════════════════════════════════════
+# Test Files
+# ═══════════════════════════════════════════════════════════════
+
+test/
+tests/
+*.test
+*.spec
+
+# ═══════════════════════════════════════════════════════════════
+# Archives
+# ═══════════════════════════════════════════════════════════════
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# ═══════════════════════════════════════════════════════════════
+# Custom Ignores
+# ═══════════════════════════════════════════════════════════════
+
+# Add any custom ignore patterns below

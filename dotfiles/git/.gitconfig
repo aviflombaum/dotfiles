@@ -1,0 +1,216 @@
+[user]
+  # Configure your user information
+  name = Your Name
+  email = your.email@example.com
+
+  # If using GPG/SSH signing for commits:
+  # signingkey = your-signing-key
+
+[gpg]
+  # Use SSH for commit signing (modern approach)
+  # format = ssh
+
+  # Traditional GPG signing
+  # format = openpgp
+
+[gpg "ssh"]
+  # If using 1Password for SSH signing:
+  # program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+  # Or use the default SSH agent:
+  # program = "ssh-keygen"
+
+[commit]
+  # Enable commit signing (set to true if you configure signing)
+  gpgsign = false
+
+  # Commit message template
+  # template = ~/.gitmessage
+
+[core]
+  # Global gitignore file
+  excludesfile = ~/.gitignore_global
+
+  # Default editor for commit messages
+  # editor = code --wait
+  # editor = vim
+
+  # Handle line endings
+  autocrlf = input
+
+  # Whitespace settings
+  whitespace = trailing-space,space-before-tab
+
+[init]
+  # Default branch name for new repositories
+  defaultBranch = main
+
+  # Template directory for new repos
+  # templateDir = ~/.git-template
+
+[push]
+  # Push only the current branch
+  default = current
+
+  # Automatically set up remote tracking
+  autoSetupRemote = true
+
+[pull]
+  # Rebase instead of merge when pulling
+  rebase = true
+
+[fetch]
+  # Automatically prune deleted remote branches
+  prune = true
+
+[merge]
+  # Include summary of merged commits
+  log = true
+
+  # Use better diff algorithm
+  conflictstyle = diff3
+
+[rebase]
+  # Automatically stash/unstash uncommitted changes
+  autoStash = true
+
+[diff]
+  # Use better diff algorithm
+  algorithm = histogram
+
+  # Show submodule changes
+  submodule = log
+
+  # Detect renames and copies
+  renames = copies
+
+[alias]
+  # Shortcuts
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+
+  # Pull with rebase
+  pr = pull --rebase
+
+  # Push to origin main/master
+  pom = push origin main
+
+  # Show authors
+  authors = shortlog -sn --no-merges
+
+  # Show all branches
+  branches = branch -a
+
+  # Show all remotes
+  remotes = remote -v
+
+  # Interactive add
+  hunk = add --patch
+
+  # Amend last commit
+  amend = commit --amend
+
+  # Undo last commit (keep changes)
+  uncommit = reset --soft HEAD~1
+
+  # Unstage files
+  unstage = reset HEAD --
+
+  # Show pretty log
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+  # Show log with stats
+  ll = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat
+
+  # Show today's commits
+  # Note: Replace 'Your Name' with your actual name, or remove this alias
+  today = log --since=midnight --author='Your Name' --oneline
+
+  # List aliases
+  aliases = config --get-regexp alias
+
+  # Show latest tag
+  lasttag = describe --tags --abbrev=0
+
+  # Show files in last commit
+  last = log -1 HEAD --stat
+
+  # Search commits by message
+  search = log --pretty=format:'%C(yellow)%h %Cblue%ad %Creset%s%Cgreen [%cn] %Cred%d' --decorate --date=short --grep
+
+  # Show branches sorted by last modified
+  recent-branches = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+  # Delete merged branches
+  cleanup = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+  # Show the current branch name
+  current = rev-parse --abbrev-ref HEAD
+
+  # Quick save work in progress
+  wip = !git add -A && git commit -m "WIP"
+
+  # Undo a 'wip' commit
+  unwip = !git log -n 1 | grep -q -c "WIP" && git reset HEAD~1
+
+[filter "lfs"]
+  # Git LFS configuration
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+
+[color]
+  # Enable colored output
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan
+
+[credential]
+  # Credential helper for macOS
+  # helper = osxkeychain
+
+  # Credential helper for Linux
+  # helper = cache --timeout=3600
+
+  # Credential helper for Windows
+  # helper = manager
+
+[branch]
+  # Automatically set up remote tracking
+  autoSetupMerge = true
+
+  # Sort branches by committer date
+  sort = -committerdate
+
+[checkout]
+  # Default remote for checkout
+  defaultRemote = origin
+
+[help]
+  # Automatically correct typos
+  autocorrect = 1
+
+[url "git@github.com:"]
+  # Use SSH for GitHub instead of HTTPS
+  insteadOf = https://github.com/
+
+[include]
+  # Include local config for machine-specific settings
+  path = ~/.gitconfig.local
